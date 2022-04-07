@@ -112,11 +112,29 @@ def data_prep(df, prop_required_column=.5, prop_required_row=.5):
     
     # Add dummy columns to dataframe
     df = pd.concat([df, dummy_df], axis=1)
-
+    
+    # Make categorical column for logerror.
+    df['logerror_bins'] = pd.cut(df.logerror, [-5, -.2, -.05, .05, .2, 4])
+    
+    # Make categorical column age of the home.
+    df['age'] = 2017 - df.yearbuilt
+    df['age_bin'] = pd.cut(df.age, 
+                           bins = [0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
+                           labels = [0, .066, .133, .20, .266, .333, .40, .466, .533, 
+                                     .60, .666, .733, .8, .866, .933])
+    
     # Make categorical column for square_feet.
     df['home_sizes'] = pd.cut(df.calculatedfinishedsquarefeet, bins=[0, 1800, 4000, 6000, 25000], 
                              labels = ['Small: 0 - 1799sqft',
                              'Medium: 1800 - 3999sqft', 'Large: 4000 - 5999sqft', 'Extra-Large: 6000 - 25000sqft'])
+    
+    # create acres variable
+    df['acres'] = df.lotsizesquarefeet/43560
+
+    # bin acres
+    df['acres_bin'] = pd.cut(df.acres, bins = [0, .10, .15, .25, .5, 1, 5, 10, 20, 50, 200], 
+                       labels = [0, .1, .2, .3, .4, .5, .6, .7, .8, .9])
+
     
     # Make categorical column for total_rooms, combining number of bedrooms and bathrooms.
     df['total_rooms'] = df['bedroomcnt'] + df['bathroomcnt']
@@ -208,16 +226,24 @@ def single_family_homes(df):
 
 
 
-
-
-def split(df):
-    train_and_validate, test = train_test_split(df, random_state=123, test_size=.15)
-    train, validate = train_test_split(train_and_validate, random_state=123, test_size=.2)
-
+def split_data(df):
+    '''
+    This function drops the customer_id column and then splits a dataframe into 
+    train, validate, and test in order to explore the data and to create and validate models. 
+    It takes in a dataframe and contains an integer for setting a seed for replication. 
+    Test is 20% of the original dataset. The remaining 80% of the dataset is 
+    divided between valiidate and train, with validate being .30*.80= 24% of 
+    the original dataset, and train being .70*.80= 56% of the original dataset. 
+    The function returns, train, validate and test dataframes. 
+    '''
+   
+    train_val, test = train_test_split(df, train_size=0.8,random_state=123)
+    train, validate = train_test_split(train_val, train_size=0.7, random_state=123)
+    
     print('Train: %d rows, %d cols' % train.shape)
     print('Validate: %d rows, %d cols' % validate.shape)
     print('Test: %d rows, %d cols' % test.shape)
-
+   
     return train, validate, test
 
 
