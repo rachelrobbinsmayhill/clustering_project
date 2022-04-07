@@ -1,4 +1,4 @@
-Clustering Project - Zillow - Predicting Home Values
+Clustering Project - Zillow - Zillow: What is driving the errors in the Zestimates?
 Codeup - Innis Cohort - April 2022
  
 ===
@@ -30,10 +30,18 @@ Table of Contents
  
  
 #### 1. DESCRIPTION:
-Work in Progress.....
+consumers with data, inspiration, and knowledge about the place they call home and connecting them with the best local professionals who can help. According to the National Association of Realtors, there are over 119 million homes in the United States, over 5 million of which are sold each year. 80% of these homes have been viewed on Zillow regardless of their market status.
+
+Zillow serves the full lifecycle of owning and living in a home: buying, selling, renting, financing, remodeling, and more. It starts with Zillow's living database of more than 110 million U.S. homes - including homes for sale, homes for rent and homes not currently on the market, as well as Zestimate home values, Rent Zestimates, and other home-related information.
+
+The Zestimate is a key element driving web traffic to Zillow, where sellers, buyers, agents, and curiosity-seekers gain knowledge of a home's value. In fact, over the years, Zillow has built a solid reputation around the Zestimate. The Zestimate takes in layers of data regarding a home's features and location and presents buyers and sellers with a value of a home. Zillow publishes Zestimates for 104 million homes, updating them weekly.
+
+Although Zillow has a model to assist in predicting a home's value, they are looking to fine-tune the model and improve upon it. This project has been requested by the Zillow Data Science Team.
 
 #### 2. GOALS: 
-Work in Progress.....
+The goal of this project is to find key drivers of property value for Single Family Properties and to construct an improved Machine Learning Regression Model to predict property tax assessed values for these properties using the features of the properties. The improved model will help Zillow develop more accurate, dependable, and trustworthy Zestimates, thus sustaining and bolstering their loyal customer base.
+
+Upon completion of the model, the project will make recommendations on what does and doesn't impact property values and deliver the recommendations in a report to the Data Science team at Zillow, so they can understand the process that developed the conclusion and have the information available to replicate the findings.
 
 #### 3. INITIAL QUESTIONS:
 Work in Progress.....
