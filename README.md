@@ -4,7 +4,7 @@ Codeup - Innis Cohort - April 2022
 ===
 
 
-<img src='Zestimate.png' align="center"/>
+<img src='Zestimate.png' width="500" height="250"align="center"/>
 
 ===
  
