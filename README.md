@@ -35,11 +35,11 @@ Table of Contents
  
  
 #### 1. DESCRIPTION:
-Zillow is the leading real estate and rental marketplace dedicated to empowering consumers with data, inspiration and knowledge around the place they call home, and connecting them with the best local professionals who can help. According to the National Association of Realtors, there are over 119 million homes in the United States, over 5 million of which are sold each year. 80% of these homes have been viewed on Zillow regardless of their market status.
+Zillow is the leading real estate and rental marketplace dedicated to empowering consumers with data, inspiration, and knowledge about the place they call home and connecting them with the best local professionals who can help. According to the National Association of Realtors, there are over 119 million homes in the United States, over 5 million of which are sold each year. 80% of these homes have been viewed on Zillow regardless of their market status.
 
-Zillow serves the full lifecycle of owning and living in a home: buying, selling, renting, financing, remodeling and more. It starts with Zillow's living database of more than 110 million U.S. homes - including homes for sale, homes for rent and homes not currently on the market, as well as Zestimate home values, Rent Zestimates and other home-related information.
+Zillow serves the full lifecycle of owning and living in a home: buying, selling, renting, financing, remodeling, and more. It starts with Zillow's living database of more than 110 million U.S. homes - including homes for sale, homes for rent and homes not currently on the market, as well as Zestimate home values, Rent Zestimates, and other home-related information.
 
-The Zestimate is a key element driving webtraffic to Zillow, where sellers, buyers, agents, and curiosity-seekers gain knowledge of a home's value. In fact, over the years, Zillow has built a solid reputation around the Zestimate. The Zestimate takes in layers of data regarding a homes features and location and presents buyers and sellars with a value of a home. Zillow publishes Zestimates for 104 million homes, updating them weekly.
+The Zestimate is a key element driving web traffic to Zillow, where sellers, buyers, agents, and curiosity-seekers gain knowledge of a home's value. In fact, over the years, Zillow has built a solid reputation around the Zestimate. The Zestimate takes in layers of data regarding a home's features and location and presents buyers and sellers with a value of a home. Zillow publishes Zestimates for 104 million homes, updating them weekly.
 
 Although Zillow has a model to assist in predicting a home's value, they are looking to fine-tune the model and **improve the Zestimate Residual Error**. This project has been requested by the Zillow Data Science Team.
 
@@ -49,15 +49,15 @@ The goal of this project is to **find key drivers of logerror** for Single Famil
 Upon completion of the model, the project will make recommendations on what does and doesn't impact logerror and deliver the recommendations in a report to the Data Science team at Zillow, so they can understand the process that developed the conclusion and have the information available to replicate the findings. 
 
 #### 3. INITIAL QUESTIONS:
-Work in Progress.....
+
 
 
 ##### Data-Focused Questions
-Work in Progress.....
-- [x] 
-- [x] 
-- [x] 
-- [x] 
+- [x] Is there a relationship between logerror and lot size in each county?
+- [x] Is there a relationship between logerror and finished square footage of the property in each county?
+- [x] Is logerror significantly different for properties in LA County vs Orange County vs Ventura County?
+- [x] Is there a relationship between logerror and zipcode?
+- [x] Controlling for property square footage, what is the relationship between logerror and age of the home?
 
  
 ##### Overall Project-Focused Questions
@@ -72,18 +72,17 @@ Work in Progress.....
  
 
 #### 4. FORMULATING HYPOTHESES
-The project started with the hypothesis that the size and location of the property would have the greatest impact on the value of the property itself, followed by the number of bedrooms and bathrooms. 
+The project started with the hypothesis that the lot size, finished square feet, and location of the property would have the greatest impact on the residual error.  
 
  
 #### 5. DELIVERABLES:
-- [x] Github Repo - containing a final report (.ipynb), acquire & prepare Modules (.py), other supplemental artifacts created while working on the project (e.g. exploratory/modeling notebook(s)).
+- [x] Github Repo - containing a final report (.ipynb), acquire & prepare modules in the form of a Wrangle.py, as well as supplemental files such as imports.py.
 - [x] README file - provides an overview of the project and steps for project reproduction. 
 - [x] Draft Jupyter Notebooks - provide all steps taken to produce the project.
-- [x] Python Module File - provides reproducible code for acquiring,  preparing, exploring, & testing the data.
-- [x] acquire.py - used to acquire data
-- [x] prepare.py - used to prepare data
+- [x] Python Module File - provides reproducible code for acquiring and preparing the data.
+- [x] wrangle.py - used to acquire data and prepare data
 - [x] Report Jupyter Notebook - provides final presentation-ready assessment and recommendations.
-- [x] 5 minute presentation to stakeholders (Zillow Data Science Team. 
+- [x] 5 minute presentation to stakeholders (Zillow Data Science Team). 
  
  
 ## II. PROJECT DATA CONTEXT
@@ -128,24 +127,24 @@ Plan➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 #### 2. ACQUIRE
 - [x]  Create .gitignore
 - [x]  Create env file with log-in credentials
-- [x]  Store env file in .gitignore to ensure security of sensitive data
-- [x]  Create acquire.py module
+- [x]  Store env file in .gitignore to ensure the security of sensitive data
+- [x]  Create wrangle.py module
 - [x]  Store functions needed to acquire the Zillow dataset from mySQL
-- [x]  Ensure all imports needed to run the functions are inside the acquire.py document
+- [x]  Ensure all imports needed to run the functions are inside the imports.py document
 - [x]  Using Jupyter Notebook
 - [x]  Run all required imports
 - [x]  Import functions from aquire.py module
 - [x]  Summarize dataset using methods and document observations
  
 #### 3. PREPARE
-Using Python Scripting Program (VS Code)
-- [x] Create prepare.py module
+Using Jupyter Lab Notebook
+- [x] Create prepare functions in the wrangle.py module
 - [x] Store functions needed to prepare the Zillow data such as:
    - [x] Split Function: to split data into train, validate, and test
    - [x] Cleaning Function: to clean data for exploration
    - [x] Encoding Function: to create numeric columns for object column
    - [x] Feature Engineering Function: to create new features
-- [x] Ensure all imports needed to run the functions are inside the prepare.py document
+- [x] Ensure all imports needed to run the functions are inside the wrangle.py document
 Using Jupyter Notebook
 - [x] Import functions from prepare.py module
 - [x] Summarize dataset using methods and document observations
@@ -158,10 +157,10 @@ Using Jupyter Notebook
  
 #### 4. EXPLORE
 Using Jupyter Notebook:
-- [x] Answer key questions about hypotheses and find drivers of tax value
+- [x] Answer key questions about hypotheses and find drivers of residual error
   - Run at least two statistical tests
   - Document findings
-- [x] Create visualizations with intent to discover variable relationships
+- [x] Create visualizations with the intent to discover variable relationships
   - Identify variables related to property values
   - Identify any potential data integrity issues
 - [x] Summarize conclusions, provide clear answers, and summarize takeaways
@@ -175,27 +174,27 @@ Using Jupyter Notebook:
 - [x] Remove unnecessary features
 - [x] Evaluate best performing models using validate set
 - [x] Choose best performing validation model for use on test set
-- [x] Test final model on out-of-sample testing dataset
+- [x] Test final model on the out-of-sample testing dataset
 - [x] Summarize performance
 - [x] Interpret and document findings
  
 #### 6. DELIVERY
-- [x] Prepare five minute presentation using Jupyter Notebook
-- [x] Include introduction of project and goals
-- [x] Provide executive summary of findings, key takeaways, and recommendations
-- [x] Create walk through of analysis 
+- [x] Prepare five-minute presentation using Jupyter Notebook
+- [x] Include an introduction of project and goals
+- [x] Provide an executive summary of findings, key takeaways, and recommendations
+- [x] Create walkthrough of analysis 
   - Visualize relationships
   - Document takeaways
-  - Explicitly define questions asked during initial analysis
-- [x] Provide final takeaways, recommend course of action, and next steps
-- [x] Be prepared to answer questions following presentation
+  - Explicitly define questions asked during the initial analysis
+- [x] Provide final takeaways, recommend a course of action, and next steps
+- [x] Be prepared to answer questions following the presentation
 
  
  
 ## IV. PROJECT MODULES:
 - [x] Python Module Files - provide reproducible code for acquiring,  preparing, exploring, & testing the data.
-   - [x] acquire.py - used to acquire data
-   - [x] prepare.py - used to prepare data
+   - [x] imports.py - used to store all imports needed to run functions and processes
+   - [x] wrangle.py - used to acquire and prepare data
  
   
 ## V. PROJECT REPRODUCTION:
@@ -204,7 +203,7 @@ Using Jupyter Notebook:
 - [x] You will need an env.py file that contains the hostname, username, and password of the mySQL database that contains the zillow database
 - [x] Store that env file locally in the repository
 - [x] Make .gitignore and confirm .gitignore is hiding your env.py file
-- [x] Clone my repo (including the acquire.py and prepare.py)
+- [x] Clone my repo (including the imports.py and wrangle.py)
 - [x] Import python libraries:  pandas, matplotlib, seaborn, numpy, and sklearn
 - [x] Follow steps as outlined in the README.md. and workbook.ipynb
-- [x] Run Zillow_Report.ipynb to view the final product
+- [x] Run final_report.ipynb to view the final product
