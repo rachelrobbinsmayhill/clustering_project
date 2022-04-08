@@ -93,6 +93,8 @@ The final DataFrame used to explore the data for this project contains the follo
 
 | Variable                       | Definition                                         | Data Type |
 |:-------------------------------|:--------------------------------------------------:|:---------:|
+| acres                          | grouped bins, based upon lot square footage        | category  |
+| age                            | grouped bins, based upon year built.               | category  |
 | assessed_value                 | total tax assessed value of the property           | float64   |
 | bathroom_bins                  | grouped bins, based upon number of bedrooms        | category  |
 | bathrooms                      | number of bathrooms and half-bathrooms in home     | float64   |
@@ -101,6 +103,9 @@ The final DataFrame used to explore the data for this project contains the follo
 | county_code_bin                | name of county as assigned by state_county_code    | category  |
 | county_code_bin_Orange County  | numeric variable representing county_code_bin      | uint8     |
 | county_code_bin_Ventura County | numeric variable representing county_code_bin      | uint8     |
+| latitude                       | Latitude of the middle of the parcel multiplied by 10e6  | category  |
+| logerror                       | Residual Error in Home Valuation                   | float64   |
+| longitude                      | Longitude of the middle of the parcel multiplied by 10e6 | category  |
 | home_sizes                     | grouped bins, based upon square footage            | category  |
 | square_feet                    | total finished living area of the home             | float64   |
 | state_county_code              | federal information processing standards code      | object    |
